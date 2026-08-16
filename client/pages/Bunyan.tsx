@@ -98,13 +98,13 @@ export default function Bunyan() {
             </div>
 
             {/* Main Image */}
-            <div className="overflow-hidden rounded-2xl border border-white/10 bg-card shadow-xl">
-              <img
-                src="/image/8801618c-01aa-4616-954e-b42ff121cb23.webp"
-                alt="Bunyan project"
-                className="h-[320px] w-full object-cover"
-              />
-            </div>
+          <div className="overflow-hidden rounded-2xl border border-white/10 bg-card shadow-xl">
+  <img
+    src={`${import.meta.env.BASE_URL}image/8801618c-01aa-4616-954e-b42ff121cb23.webp`}
+    alt="Bunyan project"
+    className="h-[320px] w-full object-cover"
+  />
+</div>
 
           </div>
         </section>
@@ -175,34 +175,6 @@ export default function Bunyan() {
 
               </div>
 
-              {/* Key Features
-              <div className="mt-8">
-
-                <h2 className="text-sm font-bold">
-                  Key Features
-                </h2>
-
-                <div className="mt-5 grid gap-3 sm:grid-cols-2">
-
-                  {[
-                    "Brand management",
-                    "Team collaboration",
-                    "Role-based permissions",
-                    "Asset management",
-                    "Dashboard analytics",
-                    "Secure authentication",
-                  ].map((feature) => (
-                    <div
-                      key={feature}
-                      className="flex items-center gap-3 text-sm text-foreground/60"
-                    >
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      {feature}
-                    </div>
-                  ))}
-</div>
-              </div> */}
-
               {/* Gallery */}
               <div className="mt-10">
 
@@ -213,16 +185,16 @@ export default function Bunyan() {
                 <div className="mt-5 grid grid-cols-3 gap-4">
 
                   {galleryImages.map((image, index) => (
-                    <div
-                      key={image}
-                      className="overflow-hidden rounded-xl border border-white/10"
-                    >
-                      <img
-                        src={image}
-                        alt={`Bunyan screenshot ${index + 1}`}
-                        className="h-32 w-full object-cover transition-transform duration-500 hover:scale-105"
-                      />
-                    </div>
+                   <div
+  key={image}
+  className="overflow-hidden rounded-xl border border-white/10"
+>
+  <img
+    src={`${import.meta.env.BASE_URL}${image.replace(/^\/+/, "")}`}
+    alt={`Bunyan screenshot ${index + 1}`}
+    className="h-32 w-full object-cover transition-transform duration-500 hover:scale-105"
+  />
+</div>
                   ))}
 
                 </div>
@@ -230,149 +202,183 @@ export default function Bunyan() {
 
             </div>
 
-            {/* ================= PROJECT DETAILS ================= */}
-            <aside>
+      {/* ================= PROJECT DETAILS ================= */}
+<aside className="flex flex-col gap-6">
 
-              <div className="sticky top-24 rounded-2xl border border-white/10 bg-card/50 p-6">
+  {/* Project Details Card */}
+  <div className="rounded-2xl border border-white/[0.07] bg-[#24252a] p-6">
 
-                <h2 className="text-sm font-bold">
-                  Project Details
-                </h2>
+    <h2 className="text-sm font-bold text-white">
+      Project Details
+    </h2>
 
-                <div className="mt-6 space-y-6">
+    <div className="mt-6 space-y-6">
 
-                  <div className="flex gap-3">
-                    <div className="text-primary">
-                      <Code2 className="h-4 w-4" />
-                    </div>
+      {/* Role */}
+      <div className="flex items-start gap-3">
+        <div className="mt-0.5 text-violet-500">
+          <Code2 className="h-4 w-4" />
+        </div>
 
-                    <div>
-                      <p className="text-[10px] text-foreground/40">
-                        Role
-                      </p>
-                      <p className="mt-1 text-xs font-medium">
-                        Full Stack Developer
-                      </p>
-                    </div>
-                  </div>
+        <div>
+          <p className="text-[9px] uppercase tracking-wide text-white/30">
+            Role
+          </p>
 
-                  <div className="flex gap-3">
-                    <div className="text-primary">
-                      <Calendar className="h-4 w-4" />
-                    </div>
+          <p className="mt-1 text-xs font-medium text-white">
+            Full Stack Developer
+          </p>
+        </div>
+      </div>
 
-                    <div>
-                      <p className="text-[10px] text-foreground/40">
-                        Timeline
-                      </p>
-                      <p className="mt-1 text-xs font-medium">
-                        3 Months
-                      </p>
-                    </div>
-                  </div>
+      {/* Timeline */}
+      <div className="flex items-start gap-3">
+        <div className="mt-0.5 text-violet-500">
+          <Calendar className="h-4 w-4" />
+        </div>
 
-                  <div className="flex gap-3">
-                    <div className="text-primary">
-                      <Layers className="h-4 w-4" />
-                    </div>
+        <div>
+          <p className="text-[9px] uppercase tracking-wide text-white/30">
+            Timeline
+          </p>
 
-                    <div>
-                      <p className="text-[10px] text-foreground/40">
-                        Team
-                      </p>
-                      <p className="mt-1 text-xs font-medium">
-                        3 Developers
-                      </p>
-                    </div>
-                  </div>
+          <p className="mt-1 text-xs font-medium text-white">
+            3 Months
+          </p>
+        </div>
+      </div>
 
-                  <div className="flex gap-3">
-                    <div className="text-primary">
-                      <User className="h-4 w-4" />
-                    </div>
+      {/* Team */}
+      <div className="flex items-start gap-3">
+        <div className="mt-0.5 text-violet-500">
+          <Layers className="h-4 w-4" />
+        </div>
 
-                    <div>
-                      <p className="text-[10px] text-foreground/40">
-                        Client
-                      </p>
-                      <p className="mt-1 text-xs font-medium">
-                        Bunyan Inc.
-                      </p>
-                    </div>
-                  </div>
+        <div>
+          <p className="text-[9px] uppercase tracking-wide text-white/30">
+            Team
+          </p>
 
-                  <div className="flex gap-3">
-                    <div className="text-primary">
-                      <Calendar className="h-4 w-4" />
-                    </div>
+          <p className="mt-1 text-xs font-medium text-white">
+            3 Developers
+          </p>
+        </div>
+      </div>
 
-                    <div>
-                      <p className="text-[10px] text-foreground/40">
-                        Date
-                      </p>
-                      <p className="mt-1 text-xs font-medium">
-                        Jan 2024 - Jun 2024
-                      </p>
-                    </div>
-                  </div>
+      {/* Client */}
+      <div className="flex items-start gap-3">
+        <div className="mt-0.5 text-violet-500">
+          <User className="h-4 w-4" />
+        </div>
 
-                </div>
+        <div>
+          <p className="text-[9px] uppercase tracking-wide text-white/30">
+            Client
+          </p>
 
-                <a
-                  href="#"
-                  className="mt-8 block text-center text-xs font-semibold text-primary hover:text-primary/80"
-                >
-                  View Project →
-                </a>
+          <p className="mt-1 text-xs font-medium text-white">
+            Bunyan Inc.
+          </p>
+        </div>
+      </div>
 
-              </div>
+      {/* Date */}
+      <div className="flex items-start gap-3">
+        <div className="mt-0.5 text-violet-500">
+          <Calendar className="h-4 w-4" />
+        </div>
 
-            </aside>
+        <div>
+          <p className="text-[9px] uppercase tracking-wide text-white/30">
+            Date
+          </p>
+
+          <p className="mt-1 text-xs font-medium text-white">
+            Jan 2024 - Jun 2024
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    {/* Share Project */}
+    <button
+      type="button"
+      className="mt-8 flex w-full items-center justify-center rounded-xl bg-[#292a36] py-4 text-xs font-semibold text-violet-400 transition-all duration-300 hover:bg-[#303143] hover:text-violet-300"
+    >
+      Share Project
+    </button>
+
+  </div>
+
+
+  {/* ================= NEED A SIMILAR SOLUTION ================= */}
+  <div className="rounded-2xl border border-white/[0.06] bg-gradient-to-br from-violet-500/20 via-[#24252a] to-[#24252a] p-6">
+
+    <h3 className="text-sm font-bold text-white">
+      Need a similar solution?
+    </h3>
+
+    <p className="mt-3 text-xs leading-relaxed text-white/45">
+      I specialize in building complex management platforms
+      with Flutter and Laravel.
+    </p>
+
+    <Link
+      to="/contact"
+      className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-violet-400 transition hover:text-violet-300"
+    >
+      Start a conversation
+      <ArrowRight className="h-3.5 w-3.5" />
+    </Link>
+
+  </div>
+
+</aside>
 </div>
-        </section>
+</section>
 
         {/* ================= CTA ================= */}
         <section className="mx-auto max-w-7xl px-6 pb-20 pt-20 lg:px-8">
+  <div className="relative overflow-hidden rounded-[32px] border border-white/[0.05] bg-gradient-to-r from-[#292b57] via-[#292a38] to-[#30243e] px-8 py-14 text-center sm:px-12 sm:py-16">
 
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-primary/20 via-card to-primary/10 p-10 text-center sm:p-14">
+    <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-violet-600/10 blur-3xl" />
 
-            <div className="pointer-events-none absolute inset-0 bg-primary/5 blur-3xl" />
+    <div className="pointer-events-none absolute -bottom-32 -right-24 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl" />
 
-            <div className="relative">
+    <div className="relative mx-auto max-w-2xl">
 
-              <h2 className="text-2xl font-extrabold sm:text-3xl">
-                Have a similar project?
-              </h2>
+      <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        Have a similar project?
+      </h2>
 
-              <p className="mx-auto mt-3 max-w-xl text-sm text-foreground/50">
-                Let's collaborate and build something extraordinary
-                together. I'm always open to discussing new
-                opportunities and creative ideas.
-              </p>
+      <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/50 sm:text-base">
+        Let's build something great together. I'm available for freelance
+        projects and full-time opportunities.
+      </p>
 
-              <div className="mt-7 flex justify-center gap-3">
+      <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
 
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-2 rounded-lg bg-brand-gradient px-6 py-3 text-xs font-semibold text-white shadow-lg shadow-primary/25"
-                >
-                  Contact Me
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+        <Link
+          to="/contact"
+          className="inline-flex min-w-[195px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-violet-500 to-indigo-500 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_rgba(124,58,237,0.35)] transition-all duration-300 hover:scale-105"
+        >
+          Contact Me
+          <ArrowRight className="h-4 w-4" />
+        </Link>
 
-                <Link
-                  to="/projects"
-                  className="inline-flex items-center rounded-lg border border-white/10 px-6 py-3 text-xs font-semibold text-white"
-                >
-                  View More Projects
-                </Link>
+        <Link
+          to="/projects"
+          className="inline-flex min-w-[195px] items-center justify-center rounded-xl bg-[#20212a]/70 px-7 py-3.5 text-sm font-semibold text-white/90 transition-all duration-300 hover:bg-[#292a35]"
+        >
+          View More Projects
+        </Link>
 
-              </div>
+      </div>
 
-            </div>
-          </div>
-        </section>
-
+    </div>
+  </div>
+</section>
       </main>
 
       {/* ================= FOOTER ================= */}

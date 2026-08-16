@@ -73,77 +73,117 @@ export default function Index() {
   return (
     <div>
       {/* Hero */}
-      <section className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-8 lg:pt-24">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-8">
-          <div>
-            <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-foreground/80">
-              Hi, I'm Hany 👋
-            </span>
-            <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Flutter{" "}
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
-                Developer
-              </span>
-            </h1>
-            <p className="mt-6 max-w-lg text-base leading-relaxed text-foreground/60 sm:text-lg">
-              I build scalable, secure and high-performance mobile
-              applications with clean architecture and modern UI/UX
-              experiences.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#projects"
-                className="inline-flex items-center justify-center rounded-lg bg-brand-gradient px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-transform hover:scale-[1.03]"
-              >
-                Hire Me Now
-              </a>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-lg border border-white/15 px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:text-primary"
-              >
-                Contact Me
-              </Link>
-            </div>
-          </div>
+<section className="mx-auto max-w-7xl px-6 pb-14 pt-16 lg:px-8 lg:pb-16 lg:pt-24">
+  <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-10">
 
-          <div className="relative mx-auto flex h-72 w-72 items-center justify-center sm:h-80 sm:w-80 lg:ml-auto lg:mr-0">
-            <div className="absolute inset-0 animate-[spin_18s_linear_infinite] rounded-full border-2 border-dashed border-primary/40" />
-            <div className="absolute inset-4 rounded-full bg-brand-gradient opacity-20 blur-2xl" />
-            <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-card sm:h-72 sm:w-72">
-              <img
-                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80"
-                alt="Hany, Flutter developer"
-                className="h-full w-full object-cover"
-              />
-            </div>
+    {/* LEFT - HERO CONTENT */}
+    <div className="relative z-10">
 
-            <span className="absolute -top-2 right-8 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-card text-primary shadow-lg">
-              <Smartphone className="h-5 w-5" />
-            </span>
-            <span className="absolute left-0 top-1/3 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-card text-primary shadow-lg">
-              <Code2 className="h-5 w-5" />
-            </span>
-            <span className="absolute bottom-2 right-0 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-card text-primary shadow-lg">
-              <Database className="h-5 w-5" />
-            </span>
-          </div>
+      <span className="inline-flex items-center rounded-full border border-white/10 bg-[#0b1020] px-4 py-1.5 text-xs font-medium text-foreground/80 shadow-sm">
+        Hi, I'm Hany 👋
+      </span>
+
+     <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+  Flutter{" "}
+  <span className="bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+    Developer
+  </span>
+</h1>
+
+      <p className="mt-6 max-w-xl text-sm leading-7 text-foreground/55 sm:text-base">
+        I build scalable, secure and high-performance mobile
+        applications with clean architecture and modern UI/UX
+        experiences.
+      </p>
+
+      <div className="mt-8 flex flex-wrap gap-3">
+        <a
+  href="#projects"
+  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 transition-all duration-300 hover:scale-[1.03] hover:shadow-violet-500/50"
+>
+  Hire Me Now
+</a>
+
+       <Link
+  to="/contact"
+  className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/[0.02] px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:border-violet-500/40 hover:text-violet-400"
+>
+  Contact Me
+</Link>
+      </div>
+    </div>
+
+    {/* RIGHT - PROFILE */}
+    <div className="relative mx-auto flex h-[330px] w-[330px] items-center justify-center sm:h-[380px] sm:w-[380px] lg:ml-auto lg:mr-6">
+
+      {/* Outer dashed ring */}
+      <div className="absolute inset-0 rounded-full border border-primary/30" />
+
+      {/* Second glowing ring */}
+      <div className="absolute inset-4 rounded-full border-2 border-primary/30 shadow-[0_0_40px_rgba(124,58,237,0.18)]" />
+
+      {/* Glow */}
+      <div className="absolute inset-12 rounded-full bg-primary/20 blur-3xl" />
+
+      {/* Profile image */}
+      <div className="relative h-[245px] w-[245px] overflow-hidden rounded-full border-4 border-[#11152a] bg-card shadow-[0_0_35px_rgba(124,58,237,0.35)] sm:h-[285px] sm:w-[285px]">
+        <img
+          src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80"
+          alt="Hany, Flutter developer"
+          className="h-full w-full object-cover"
+        />
+      </div>
+
+      {/* Floating icon - top */}
+      <span className="absolute right-10 top-2 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/20 bg-[#0b1020] text-primary shadow-lg shadow-primary/10">
+        <Smartphone className="h-5 w-5" />
+      </span>
+
+      {/* Floating icon - left */}
+      <span className="absolute left-0 top-[38%] flex h-11 w-11 items-center justify-center rounded-xl border border-emerald-400/20 bg-[#0b1020] text-emerald-400 shadow-lg">
+        <Code2 className="h-5 w-5" />
+      </span>
+
+      {/* Floating icon - right */}
+      <span className="absolute bottom-[20%] right-0 flex h-11 w-11 items-center justify-center rounded-xl border border-yellow-400/20 bg-[#0b1020] text-yellow-400 shadow-lg">
+        <Database className="h-5 w-5" />
+      </span>
+
+      {/* Floating icon - bottom */}
+      <span className="absolute bottom-0 left-[28%] flex h-11 w-11 items-center justify-center rounded-xl border border-orange-400/20 bg-[#0b1020] text-orange-400 shadow-lg">
+        <Code2 className="h-5 w-5" />
+      </span>
+    </div>
+  </div>
+</section>
+
+{/* ================= STATS ================= */}
+<section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+  <div className="grid grid-cols-2 overflow-hidden rounded-xl border border-white/[0.07] bg-[#080d19]/80 sm:grid-cols-4">
+    {stats.map(({ icon: Icon, value, label }, index) => (
+      <div
+        key={label}
+        className={`flex items-center gap-3 px-5 py-5 sm:px-7 ${
+          index !== 0 ? "border-l border-white/[0.06]" : ""
+        }`}
+      >
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <Icon className="h-4 w-4" />
+        </span>
+
+        <div>
+          <p className="text-xl font-extrabold leading-none text-foreground sm:text-2xl">
+            {value}
+          </p>
+
+          <p className="mt-1 text-[10px] uppercase tracking-wide text-foreground/40 sm:text-xs">
+            {label}
+          </p>
         </div>
-      </section>
-
-      {/* Stats */}
-      <section className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-6 rounded-2xl border border-white/10 bg-card/60 p-8 sm:grid-cols-4">
-          {stats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                <Icon className="h-4 w-4" />
-              </span>
-              <p className="text-2xl font-extrabold text-foreground">{value}</p>
-              <p className="text-sm text-foreground/50">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* About */}
       <section id="about" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-24 lg:px-8">
@@ -214,12 +254,13 @@ export default function Index() {
               key={project.title}
               className="group overflow-hidden rounded-2xl border border-white/10 bg-card/40 transition-colors hover:border-primary/30"
             >
-             <div className="relative h-44 overflow-hidden">
+            <div className="relative h-44 overflow-hidden">
   <img
-    src={project.image}
+    src={`${import.meta.env.BASE_URL}${project.image.replace(/^\/+/, "")}`}
     alt={project.title}
     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
   />
+
 
   {project.tag && (
     <span className="absolute left-4 top-4 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white">
@@ -263,25 +304,38 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-brand-gradient p-10 text-center sm:p-14 lg:flex-row lg:text-left shadow-lg shadow-primary/25">
-          <div>
-            <h2 className="text-2xl font-extrabold text-white sm:text-3xl">
-              Let's Build Something Amazing Together
-            </h2>
-            <p className="mt-2 text-white/80">
-              I have a project in mind? Let's turn your ideas into reality.
-            </p>
-          </div>
-          <Link
-            to="/contact"
-            className="inline-flex shrink-0 items-center justify-center rounded-lg bg-white px-7 py-3.5 text-sm font-semibold text-primary transition-transform hover:scale-[1.03] shadow-md"
-          >
-            Get In Touch
-          </Link>
-        </div>
-      </section>
+    {/* ================= CTA ================= */}
+<section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+  <div className="relative overflow-hidden rounded-2xl border border-violet-500/20 bg-gradient-to-r from-[#151044] via-[#21165c] to-[#24136b] px-7 py-7 shadow-[0_12px_40px_rgba(124,58,237,0.18)] sm:px-8 sm:py-8 lg:px-8 lg:py-7">
+
+    {/* Subtle glow */}
+    <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-violet-500/20 blur-3xl" />
+    <div className="pointer-events-none absolute -bottom-20 left-1/3 h-32 w-32 rounded-full bg-purple-500/10 blur-3xl" />
+
+    <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+
+      {/* Text */}
+      <div>
+        <h2 className="text-xl font-bold tracking-tight text-white sm:text-2xl">
+          Let's Build Something Amazing Together
+        </h2>
+
+        <p className="mt-2 text-xs text-white/45 sm:text-sm">
+          I have a project in mind? Let's turn your ideas into reality.
+        </p>
+      </div>
+
+      {/* Button */}
+      <Link
+        to="/contact"
+        className="shrink-0 rounded-none bg-gradient-to-r from-violet-500 to-indigo-500 px-6 py-3 text-xs font-semibold text-white shadow-lg shadow-violet-500/30 transition-all duration-300 hover:scale-[1.03] hover:shadow-violet-500/50"
+      >
+        Get In Touch
+      </Link>
+
     </div>
+  </div>
+</section>  
+  </div>
   );
 }

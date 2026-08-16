@@ -215,27 +215,36 @@ export default function About() {
       </section>
 
 {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-8 overflow-hidden rounded-2xl border border-white/10 bg-card/50 p-8 sm:p-10 lg:flex-row lg:px-12">
-          <div>
-            <h2 className="text-2xl font-extrabold sm:text-3xl">
-              Interested in working together?
-            </h2>
+<section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8">
+  <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-r from-[#181b25] via-[#1d2029] to-[#191c25] px-8 py-8 shadow-[0_15px_40px_rgba(0,0,0,0.25)] sm:px-10 sm:py-9 lg:px-14">
 
-            <p className="mt-3 text-sm text-foreground/50">
-              Let's discuss your project and how I can help you build
-              something amazing.
-            </p>
-          </div>
+    {/* Subtle right glow */}
+    <div className="pointer-events-none absolute right-0 top-0 h-full w-1/4 bg-gradient-to-l from-violet-500/[0.04] to-transparent" />
 
-          <Link
-            to="/contact"
-            className="inline-flex shrink-0 items-center justify-center rounded-full bg-brand-gradient px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-transform hover:scale-105"
-          >
-            Contact Me
-          </Link>
-        </div>
-      </section>
+    <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+
+      {/* Text */}
+      <div>
+        <h2 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+          Interested in working together?
+        </h2>
+
+        <p className="mt-3 text-sm text-white/45">
+          Let's discuss your project and how I can help you build something amazing.
+        </p>
+      </div>
+
+      {/* Button */}
+      <Link
+        to="/contact"
+        className="relative inline-flex shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 px-7 py-3.5 text-sm font-semibold text-white shadow-[0_0_25px_rgba(124,58,237,0.35)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(124,58,237,0.5)]"
+      >
+        Contact Me
+      </Link>
+
+    </div>
+  </div>
+</section>
     </div>
   );
 }

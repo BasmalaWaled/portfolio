@@ -184,109 +184,83 @@ export default function Articles() {
         </div>
       </section>
 
-      {/* ================= CONTENT ================= */}
-      <section className="mx-auto max-w-6xl px-6 pb-24 pt-8 lg:px-8">
+     
+{/* ================= CONTENT ================= */}
+<section className="mx-auto max-w-6xl px-6 pb-24 pt-8 lg:px-8">
 
-        <div className="grid gap-7 lg:grid-cols-[1fr_260px]">
+  <div className="grid gap-7 lg:grid-cols-[1fr_260px]">
 
-          {/* ================= ARTICLES ================= */}
-<main className="space-y-5">
+    {/* ================= ARTICLES ================= */}
+    <main className="space-y-5">
 
-            {filteredArticles.map((article) => (
-              <article
-                key={article.title}
-                className="group rounded-2xl border border-white/[0.09] bg-[#070a14]/80 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-500/30"
-              >
-                <div className="flex gap-4 sm:gap-5">
+      {filteredArticles.map((article) => (
+        <Link
+          key={article.title}
+          to="/articles/biometric-authentication"
+          className="group block rounded-2xl border border-white/[0.09] bg-[#070a14]/80 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-violet-500/30"
+        >
+          <div className="flex gap-4 sm:gap-5">
 
-                  {/* Image */}
-                  <div className="h-24 w-32 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-cyan-500/30 via-blue-500/10 to-violet-500/20 sm:h-28 sm:w-36">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
+            {/* Image */}
+            <div className="h-24 w-32 shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-cyan-500/30 via-blue-500/10 to-violet-500/20 sm:h-28 sm:w-36">
+              <img
+                src={`${import.meta.env.BASE_URL}${article.image.replace(/^\/+/, "")}`}
+                alt={article.title}
+                className="h-full w-full object-cover"
+              />
+            </div>
 
-                  {/* Content */}
-                  <div className="min-w-0 flex-1">
+            {/* Content */}
+            <div className="min-w-0 flex-1">
 
-                    <div className="flex items-start justify-between gap-3">
+              <div className="flex items-start justify-between gap-3">
 
-                      <h2 className="text-sm font-bold leading-snug text-white sm:text-base">
-                        {article.title}
-                      </h2>
+                <h2 className="text-sm font-bold leading-snug text-white sm:text-base">
+                  {article.title}
+                </h2>
 
-                      <button
-                        type="button"
-                        className="hidden shrink-0 text-white/35 transition hover:text-violet-400 sm:block"
-                      >
-                        <Bookmark className="h-4 w-4" />
-                      </button>
-                    </div>
+                <span className="hidden shrink-0 text-white/35 sm:block">
+                  <Bookmark className="h-4 w-4" />
+                </span>
 
-                    <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-white/40">
-                      {article.description}
-                    </p>
-
-                    {/* Meta */}
-                    <div className="mt-3 flex flex-wrap items-center gap-3 text-[10px] text-white/40">
-
-                      <span className="flex items-center gap-1">
-                        <CalendarDays className="h-3 w-3" />
-                        {article.date}
-                      </span>
-
-                      <span className="flex items-center gap-1">
-                        <Clock3 className="h-3 w-3" />
-                        {article.readTime}
-                      </span>
-
-                      <span className="flex items-center gap-1">
-                        <Tag className="h-3 w-3" />
-
-                        <span className="rounded-full bg-cyan-500/15 px-2 py-0.5 font-medium text-cyan-400">
-                          {article.category}
-                        </span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            ))}
-
-            {filteredArticles.length === 0 && (
-              <div className="rounded-2xl border border-white/[0.08] py-20 text-center">
-                <p className="text-sm text-white/40">
-                  No articles found.
-                </p>
               </div>
-            )}
 
-            {/* Pagination */}
-            <div className="flex justify-center gap-2 pt-8">
+              <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-white/40">
+                {article.description}
+              </p>
 
-              <button className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 text-xs font-bold shadow-lg shadow-purple-500/20">
-                1
-              </button>
+              {/* Meta */}
+              <div className="mt-3 flex flex-wrap items-center gap-3 text-[10px] text-white/40">
 
-              <button className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] text-xs text-white/50 hover:bg-white/5">
-                2
-              </button>
+                <span className="flex items-center gap-1">
+                  <CalendarDays className="h-3 w-3" />
+                  {article.date}
+                </span>
 
-              <button className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] text-xs text-white/50 hover:bg-white/5">
-                3
-              </button>
+                <span className="flex items-center gap-1">
+                  <Clock3 className="h-3 w-3" />
+                  {article.readTime}
+                </span>
 
-              <button className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] text-white/50 hover:bg-white/5">
-                <ChevronRight className="h-4 w-4" />
-              </button>
+                <span className="flex items-center gap-1">
+                  <Tag className="h-3 w-3" />
+
+                  <span className="rounded-full bg-cyan-500/15 px-2 py-0.5 font-medium text-cyan-400">
+                    {article.category}
+                  </span>
+                </span>
+
+              </div>
 
             </div>
-          </main>
- {/* ================= SIDEBAR ================= */}
-          <aside className="space-y-5">
+          </div>
+        </Link>
+      ))}
 
+    </main>
+
+    {/* ================= SIDEBAR ================= */}
+    <aside className="space-y-5">
             {/* Categories */}
             <div className="rounded-2xl border border-white/[0.06] bg-[#070a14]/80 p-5">
 
