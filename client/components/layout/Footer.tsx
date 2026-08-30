@@ -24,11 +24,8 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <Link to="/" className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-gradient text-base font-extrabold text-white">
-              H
-            </span>
             <span className="text-lg font-extrabold tracking-tight text-foreground">
-              HANY<span className="text-primary">.dev</span>
+              BASMALA<span className="text-primary">.dev</span>
             </span>
           </Link>
 
@@ -61,7 +58,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-8 text-center text-sm text-foreground/40">
-          © {new Date().getFullYear()} HANY.dev. All rights reserved.
+          © {new Date().getFullYear()} BASMALA.dev. All rights reserved.
         </p>
       </div>
     </footer>

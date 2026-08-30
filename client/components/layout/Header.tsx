@@ -47,11 +47,8 @@ export default function Header() {
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-gradient text-base font-extrabold text-white">
-            H
-          </span>
           <span className="text-lg font-extrabold tracking-tight text-foreground">
-            HANY<span className="text-primary">.dev</span>
+            BASMALA<span className="text-primary">.dev</span>
           </span>
         </Link>
 

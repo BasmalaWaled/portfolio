@@ -17,8 +17,15 @@ import {
   Smartphone,
   Sparkles,
   Users,
+  Layers,
+  Laptop,
+  Rocket,
+  Palette,
+  Braces,
+  FileCode2,
+  Atom,
+  Wind,
 } from "lucide-react";
-
 const {
   hero,
   stats,
@@ -41,8 +48,17 @@ const iconMap = {
   GitCommit,
   Box,
   PenTool,
-};
 
+  Code2,
+  Layers,
+  Laptop,
+  Rocket,
+  Palette,
+  Braces,
+  FileCode2,
+  Atom,
+  Wind,
+};
 export default function Index() {
   return (
     <div>

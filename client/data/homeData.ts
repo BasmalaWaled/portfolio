@@ -1,14 +1,14 @@
 export const homeData = {
   // ================= HERO =================
   hero: {
-    greeting: "Hi, I'm Hany 👋",
+    greeting: "Hi, I'm Basmala 👋",
 
-    title: "Flutter",
+    title: "Frontend",
 
     highlightedTitle: "Developer",
 
     description:
-      "I build scalable, secure and high-performance mobile applications with clean architecture and modern UI/UX experiences.",
+      "Front-End Developer specialized in React.js & Next.js & TypeScript. Building component-based, production-style dashboards and REST-API-driven apps.",
 
     hireButton: {
       text: "Hire Me Now",
@@ -20,33 +20,32 @@ export const homeData = {
       to: "/contact",
     },
 
-    profileImage:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
+  profileImage: `${import.meta.env.BASE_URL}image/photo_2026-07-25_01-13-22.jpg`,
 
-    profileImageAlt: "Hany, Flutter developer",
+    profileImageAlt: "Basmala, frontend developer",
   },
 
   // ================= STATS =================
   stats: [
     {
-      icon: "Activity",
-      value: "15+",
+      icon: "Code2",
+      value: "10+",
       label: "Projects Completed",
     },
     {
-      icon: "Users",
+      icon: "Layers",
       value: "5+",
-      label: "Client Worldwide",
+      label: "Technologies",
     },
     {
-      icon: "Award",
-      value: "3+",
-      label: "Years Experience",
+      icon: "Laptop",
+      value: "2+",
+      label: "Years Learning",
     },
     {
-      icon: "Download",
-      value: "100K+",
-      label: "Downloads",
+      icon: "Rocket",
+      value: "100%",
+      label: "Passion for Coding",
     },
   ],
 
@@ -57,24 +56,24 @@ export const homeData = {
     title: "About Me",
 
     image:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80",
+      "/image/0d6fa7c1-a9f2-4cf2-9d35-6c4b196b82f4.webp",
 
-    imageAlt: "Hany working on a laptop",
+    imageAlt: "Frontend developer working on a laptop",
 
     description:
-      "I'm a passionate Flutter Developer who loves turning ideas into real products. I focus on writing clean code and delivering exceptional user experiences.",
+      "I'm a passionate Frontend Developer who loves turning ideas and designs into modern, responsive, and interactive web applications. I specialize in building clean and user-friendly interfaces using React and modern web technologies, with a strong focus on performance and user experience.",
 
     points: [
-      "Clean Architecture",
+      "Responsive Web Design",
+      "React Development",
       "Performance & Optimization",
       "State Management",
       "Problem Solver",
-      "Product Focused",
     ],
 
     button: {
       text: "View About Me",
-      to: "/contact",
+      to: "/about",
     },
   },
 
@@ -91,27 +90,30 @@ export const homeData = {
 
     items: [
       {
-        title: "Bunyan",
-        description: "Brand management platform...",
-        image: "/image/0282a9a3afbba8aed2c7174a284c6461.webp",
+        title: "Admin Dashboard",
+        description:
+          "Modern responsive admin dashboard with interactive charts and user management.",
+        image: "/image/dashboard.webp",
         tag: "Featured",
-        tags: ["Flutter", "Laravel", "Bloc", "MySQL"],
+        tags: ["React", "TypeScript", "Tailwind CSS"],
       },
 
       {
-        title: "WebRTC QR Calling",
-        description: "Peer-to-peer calling app...",
-        image: "/image/392ee1152754af503131d19c3593a9c7.webp",
+        title: "E-Commerce Website",
+        description:
+          "Responsive e-commerce platform with modern UI and product management.",
+        image: "/image/ecommerce.webp",
         tag: "Featured",
-        tags: ["Flutter", "WebRTC", "Socket.IO"],
+        tags: ["React", "JavaScript", "API"],
       },
 
       {
-        title: "Biometric Login",
-        description: "Secure authentication...",
-        image: "/image/f099971824c1f2ae9d36b09958f6ee7b.webp",
+        title: "Portfolio Website",
+        description:
+          "Modern personal portfolio built with React and responsive design.",
+        image: "/image/portfolio.webp",
         tag: "Featured",
-        tags: ["Flutter", "Android", "Security"],
+        tags: ["React", "TypeScript", "Tailwind CSS"],
       },
     ],
   },
@@ -122,36 +124,36 @@ export const homeData = {
 
     items: [
       {
-        icon: "Smartphone",
-        label: "Flutter",
+        icon: "Code2",
+        label: "HTML",
       },
       {
-        icon: "Hexagon",
-        label: "Dart",
+        icon: "Palette",
+        label: "CSS",
       },
       {
-        icon: "Flame",
-        label: "Firebase",
+        icon: "Braces",
+        label: "JavaScript",
       },
       {
-        icon: "Database",
-        label: "Supabase",
+        icon: "FileCode2",
+        label: "TypeScript",
+      },
+      {
+        icon: "Atom",
+        label: "React",
+      },
+      {
+        icon: "Layers",
+        label: "Next.js",
+      },
+      {
+        icon: "Wind",
+        label: "Tailwind CSS",
       },
       {
         icon: "GitBranch",
-        label: "Bloc",
-      },
-      {
-        icon: "GitCommit",
         label: "Git",
-      },
-      {
-        icon: "Box",
-        label: "Docker",
-      },
-      {
-        icon: "PenTool",
-        label: "Figma",
       },
     ],
   },
@@ -161,7 +163,7 @@ export const homeData = {
     title: "Let's Build Something Amazing Together",
 
     description:
-      "I have a project in mind? Let's turn your ideas into reality.",
+      "Have a project in mind? Let's turn your ideas into reality.",
 
     button: {
       text: "Get In Touch",
