@@ -177,8 +177,6 @@ export default function About() {
 
         <div className="relative mt-12">
 
-          {/* Timeline Line */}
-          <div className="absolute left-[calc(50%-1px)] top-0 hidden h-full w-px bg-primary/30 md:block" />
 
 
           <div className="space-y-10">

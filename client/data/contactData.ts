@@ -36,17 +36,12 @@ export const socialLinks = [
   {
     name: "GitHub",
     label: "GH",
-    href: "#",
+    href: "https://github.com/BasmalaWaled",
   },
   {
     name: "LinkedIn",
     label: "in",
-    href: "#",
-  },
-  {
-    name: "X",
-    label: "X",
-    href: "#",
+    href: "https://www.linkedin.com/in/basmalawaled?utm_source",
   },
   {
     name: "Instagram",
@@ -60,7 +55,7 @@ export const contactPageData = { header: { title: "Contact", highlight: "Me", de
 form: { name: { label: "Your Name", placeholder: "What's your name?", },
 email: {
   label: "Your Email",
-  placeholder: "your@email.com",
+  placeholder: "basmlawaled1@gmail.com",
 },
 
 subject: {

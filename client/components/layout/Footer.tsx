@@ -5,17 +5,14 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Projects", href: "/#projects" },
-  { label: "Articles", href: "/articles" },
   { label: "Experience", href: "/experience" },
   { label: "Contact", href: "/contact" },
 ];
 
 const socials = [
-  { icon: Code, href: "https://github.com", label: "GitHub" },
-  { icon: User, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Share2, href: "https://twitter.com", label: "Twitter" },
-  { icon: Globe, href: "https://hany.dev", label: "Website" },
-  { icon: Mail, href: "mailto:hello@hany.dev", label: "Email" },
+  { icon: Code, href: "https://github.com/BasmalaWaled", label: "GitHub" },
+  { icon: User, href: "https://www.linkedin.com/in/basmalawaled", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:basmlawaled1@gmail.com", label: "Email" },
 ];
 
 export default function Footer() {

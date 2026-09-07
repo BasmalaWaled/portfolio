@@ -8,13 +8,58 @@ import {
 } from "../data/contactData";
 
 export default function Contact() {
-  const handleSubmit = (
-    event: React.FormEvent<HTMLFormElement>
-  ) => {
-    event.preventDefault();
+ const handleSubmit = async (
+  event: React.FormEvent<HTMLFormElement>
+) => {
+  event.preventDefault();
 
-    alert(contactPageData.form.successMessage);
-  };
+  const form = event.currentTarget;
+
+  try {
+    const response = await fetch(
+      "https://formsubmit.co/ajax/basmlawaled1@gmail.com",
+      {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: (
+            form.elements.namedItem("name") as HTMLInputElement
+          ).value,
+
+          email: (
+            form.elements.namedItem("email") as HTMLInputElement
+          ).value,
+
+          subject: (
+            form.elements.namedItem("subject") as HTMLInputElement
+          ).value,
+
+          message: (
+            form.elements.namedItem("message") as HTMLTextAreaElement
+          ).value,
+
+          _subject: "New Message From Portfolio",
+          _replyto: (
+            form.elements.namedItem("email") as HTMLInputElement
+          ).value,
+        }),
+      }
+    );
+
+    if (response.ok) {
+      alert("Message sent successfully!");
+      form.reset();
+    } else {
+      alert("Something went wrong. Please try again.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Failed to send message. Please try again.");
+  }
+};
 
   return (
     <div className="min-h-screen bg-background text-foreground">

@@ -116,21 +116,20 @@ export default function Index() {
               />
             </div>
 
-            <span className="absolute right-10 top-2 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/20 bg-[#0b1020] text-primary shadow-lg shadow-primary/10">
-              <Smartphone className="h-5 w-5" />
-            </span>
+           <span className="absolute right-10 top-2 flex h-11 w-11 animate-float-slow items-center justify-center rounded-xl border border-primary/20 bg-[#0b1020] text-primary shadow-lg shadow-primary/10">
+  <Smartphone className="h-5 w-5" />
+</span>
 
-            <span className="absolute left-0 top-[38%] flex h-11 w-11 items-center justify-center rounded-xl border border-emerald-400/20 bg-[#0b1020] text-emerald-400 shadow-lg">
-              <Code2 className="h-5 w-5" />
-            </span>
+          <span className="absolute left-0 top-[38%] flex h-11 w-11 animate-float items-center justify-center rounded-xl border border-emerald-400/20 bg-[#0b1020] text-emerald-400 shadow-lg">
+  <Code2 className="h-5 w-5" />
+</span>
 
-            <span className="absolute bottom-[20%] right-0 flex h-11 w-11 items-center justify-center rounded-xl border border-yellow-400/20 bg-[#0b1020] text-yellow-400 shadow-lg">
-              <Database className="h-5 w-5" />
-            </span>
-
-            <span className="absolute bottom-0 left-[28%] flex h-11 w-11 items-center justify-center rounded-xl border border-orange-400/20 bg-[#0b1020] text-orange-400 shadow-lg">
-              <Code2 className="h-5 w-5" />
-            </span>
+            <span className="absolute bottom-[20%] right-0 flex h-11 w-11 animate-float-reverse items-center justify-center rounded-xl border border-yellow-400/20 bg-[#0b1020] text-yellow-400 shadow-lg">
+  <Database className="h-5 w-5" />
+</span>
+<span className="absolute bottom-0 left-[28%] flex h-11 w-11 animate-float-slow-reverse items-center justify-center rounded-xl border border-orange-400/20 bg-[#0b1020] text-orange-400 shadow-lg">
+  <Code2 className="h-5 w-5" />
+</span>
           </div>
         </div>
       </section>
@@ -255,55 +254,52 @@ export default function Index() {
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
 
-          {projects.items.map((project) => (
-            <div
-              key={project.title}
-              className="group overflow-hidden rounded-2xl border border-white/10 bg-card/40 transition-colors hover:border-primary/30"
-            >
-              <div className="relative h-44 overflow-hidden">
+  {projects.items.map((project) => (
+  <Link
+    key={project.title}
+    to={project.link}
+    className="group block overflow-hidden rounded-2xl border border-white/10 bg-card/40 transition-colors hover:border-primary/30"
+  >
+    <div className="relative h-44 overflow-hidden">
 
-                <img
-                  src={`${import.meta.env.BASE_URL}${project.image.replace(
-                    /^\/+/,
-                    ""
-                  )}`}
-                  alt={project.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+      <img
+        src={project.image}
+        alt={project.title}
+        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
 
-                {project.tag && (
-                  <span className="absolute left-4 top-4 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white">
-                    {project.tag}
-                  </span>
-                )}
+      {project.tag && (
+        <span className="absolute left-4 top-4 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white">
+          {project.tag}
+        </span>
+      )}
 
-              </div>
+    </div>
 
-              <div className="p-6">
+    <div className="p-6">
 
-                <h3 className="text-lg font-bold text-foreground">
-                  {project.title}
-                </h3>
+      <h3 className="text-lg font-bold text-foreground">
+        {project.title}
+      </h3>
 
-                <p className="mt-2 text-sm leading-relaxed text-foreground/55">
-                  {project.description}
-                </p>
+      <p className="mt-2 text-sm leading-relaxed text-foreground/55">
+        {project.description}
+      </p>
 
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-foreground/60"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {project.tags.map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-foreground/60"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
 
-              </div>
-            </div>
-          ))}
-
+    </div>
+  </Link>
+))}
         </div>
       </section>
 

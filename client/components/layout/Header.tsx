@@ -7,7 +7,6 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
-  { label: "Articles", href: "/articles" },
   { label: "Experience", href: "/experience" },
   { label: "Contact", href: "/contact" },
 ];
@@ -68,21 +67,14 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <button
-            onClick={() => setIsDark((v) => !v)}
-            aria-label="Toggle theme"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-foreground/70 transition-colors hover:border-primary/40 hover:text-primary"
-          >
-            {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </button>
-          <a
-            href="/HANY-CV.pdf"
-            download
-            className="inline-flex items-center gap-2 rounded-lg bg-brand-gradient px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-transform hover:scale-[1.03]"
-          >
-            <Download className="h-4 w-4" />
-            Download CV
-          </a>
+        <a
+  href={`${import.meta.env.BASE_URL}Basmala_Waled_CV.pdf`}
+  download
+  className="inline-flex items-center gap-2 rounded-lg bg-brand-gradient px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-transform hover:scale-[1.03]"
+>
+  <Download className="h-4 w-4" />
+  Download CV
+</a>
         </div>
 
         <button
@@ -112,14 +104,14 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="/HANY-CV.pdf"
-              download
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-brand-gradient px-4 py-2.5 text-sm font-semibold text-white"
-            >
-              <Download className="h-4 w-4" />
-              Download CV
-            </a>
+           <a
+  href={`${import.meta.env.BASE_URL}Basmala_Waled_CV.pdf`}
+  download
+  className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-brand-gradient px-4 py-2.5 text-sm font-semibold text-white"
+>
+  <Download className="h-4 w-4" />
+  Download CV
+</a>
           </nav>
         </div>
       )}

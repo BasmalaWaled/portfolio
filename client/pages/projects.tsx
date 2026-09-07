@@ -59,26 +59,20 @@ export default function Projects() {
               className="group overflow-hidden rounded-2xl border border-white/[0.06] bg-[#24252a] transition-all duration-300 hover:-translate-y-1 hover:border-white/[0.12]"
             >
 
-              {/* Project Image */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-[#1f2024]">
+            {/* Project Image */}
+<div className="relative aspect-[16/10] overflow-hidden bg-[#1f2024]">
+  <img
+    src={project.image}
+    alt={project.title}
+    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+  />
 
-                <img
-                  src={`${import.meta.env.BASE_URL}${project.image.replace(
-                    /^\/+/,
-                    ""
-                  )}`}
-                  alt={project.title}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-
-                {/* Featured Badge */}
-                {project.featured && (
-                  <span className="absolute right-5 top-5 rounded-full bg-[#343c72]/80 px-3 py-1 text-[10px] font-medium text-[#747cff] backdrop-blur-sm">
-                    FEATURED
-                  </span>
-                )}
-
-              </div>
+  {project.featured && (
+    <span className="absolute right-5 top-5 rounded-full bg-[#343c72]/80 px-3 py-1 text-[10px] font-medium text-[#747cff] backdrop-blur-sm">
+      FEATURED
+    </span>
+  )}
+</div>
 
 
               {/* Project Info */}

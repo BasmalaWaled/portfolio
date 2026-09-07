@@ -20,7 +20,7 @@ export const homeData = {
       to: "/contact",
     },
 
-  profileImage: `${import.meta.env.BASE_URL}image/photo_2026-07-25_01-13-22.jpg`,
+    profileImage: `${import.meta.env.BASE_URL}image/photo_2026-07-25_01-13-22.jpg`,
 
     profileImageAlt: "Basmala, frontend developer",
   },
@@ -55,8 +55,7 @@ export const homeData = {
 
     title: "About Me",
 
-    image:
-      "/image/0d6fa7c1-a9f2-4cf2-9d35-6c4b196b82f4.webp",
+    image: `${import.meta.env.BASE_URL}image/0d6fa7c1-a9f2-4cf2-9d35-6c4b196b82f4.webp`,
 
     imageAlt: "Frontend developer working on a laptop",
 
@@ -88,30 +87,33 @@ export const homeData = {
       to: "/projects",
     },
 
-    items: [
-      {
-        title: "Admin Dashboard",
-        description:
-          "Modern responsive admin dashboard with interactive charts and user management.",
-        image: "/image/dashboard.webp",
-        tag: "Featured",
-        tags: ["React", "TypeScript", "Tailwind CSS"],
-      },
+   items: [
+  {
+  title: "Surrah",
+  description:
+    "Manage your expenses with ease. Track your income and expenses, organize categories, and monitor daily, weekly, and monthly reports — even without an internet connection.",
+  image: `${import.meta.env.BASE_URL}image/surrah.webp`,
+  tag: "Featured",
+  tags: ["React", "TypeScript", "Tailwind CSS"],
+  link: "/projects/surrah",
+},
 
-      {
-        title: "E-Commerce Website",
-        description:
-          "Responsive e-commerce platform with modern UI and product management.",
-        image: "/image/ecommerce.webp",
-        tag: "Featured",
-        tags: ["React", "JavaScript", "API"],
-      },
+     {
+  title: "Bunyan",
+  description:
+    "Brand management platform that helps companies manage their identity, teams, assets, and digital presence.",
+  category: ["Web", "Featured"],
+  image: `${import.meta.env.BASE_URL}image/bunyan.webp`,
+  tags: ["Flutter", "Laravel", "Bloc", "MySQL"],
+  link: "/projects/bunyan",
+  featured: true,
+},
 
       {
         title: "Portfolio Website",
         description:
           "Modern personal portfolio built with React and responsive design.",
-        image: "/image/portfolio.webp",
+        image: `${import.meta.env.BASE_URL}image/portfolio.webp`,
         tag: "Featured",
         tags: ["React", "TypeScript", "Tailwind CSS"],
       },
