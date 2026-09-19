@@ -1,10 +1,13 @@
+ import { useState } from "react";
  import { ArrowLeft, ExternalLink, GitBranch, Calendar, User, Layers, Code2, ArrowRight, } from "lucide-react";
 import { Link } from "react-router-dom";
 import { bunyanData } from "../data/bunyanData";
 const BASE = import.meta.env.BASE_URL;
 const imagePath = (path: string) =>
   `${BASE}${path.replace(/^\/+/, "")}`;
-export default function Bunyan() { const project = bunyanData;
+export default function Bunyan() { 
+  const [activeTab, setActiveTab] = useState("Overview");
+  const project = bunyanData;
 return ( <div className="min-h-screen bg-background text-foreground">
   <main>
 
@@ -157,118 +160,270 @@ return ( <div className="min-h-screen bg-background text-foreground">
 
           {/* Tabs */}
 
-          <div className="flex gap-7 border-b border-white/10 text-xs">
-
-            <button className="border-b-2 border-primary pb-4 text-primary">
-              Overview
-            </button>
-
-            <button className="pb-4 text-foreground/40 hover:text-white">
-              Features
-            </button>
-
-            <button className="pb-4 text-foreground/40 hover:text-white">
- Tech Stack
-            </button>
-
-            <button className="pb-4 text-foreground/40 hover:text-white">
-              Challenges
-            </button>
-
-            <button className="pb-4 text-foreground/40 hover:text-white">
-              Gallery
-            </button>
-
-          </div>
-
-
-
-          {/* ================= PROBLEM ================= */}
-
-          <div className="mt-8">
-
-            <h2 className="flex items-center gap-2 text-sm font-bold">
-
-              <span className="text-primary">
-                ◎
-              </span>
-
-              The Problem
-
-            </h2>
-
-
-            <p className="mt-4 text-sm leading-7 text-foreground/55">
-
-              {project.problem}
-
-            </p>
-
-          </div>
-
-
-
-          {/* ================= SOLUTION ================= */}
-
-          <div className="mt-8">
-
-            <h2 className="flex items-center gap-2 text-sm font-bold">
-
-              <span className="text-primary">
-                ◎
-              </span>
-
-              The Solution
-
-            </h2>
-
-
-            <p className="mt-4 text-sm leading-7 text-foreground/55">
-
-              {project.solution}
-
-            </p>
-
-          </div>
-
-
-
-          {/* ================= GALLERY ================= */}
-
-          <div className="mt-10">
-
-            <h2 className="text-sm font-bold">
-              Project Gallery
-            </h2>
-
-
-            <div className="mt-5 grid grid-cols-3 gap-4">
-
-              {project.gallery.map((image, index) => (
-
-                <div
-                  key={image}
-                  className="overflow-hidden rounded-xl border border-white/10"
+        <div className="mt-12 border-b border-white/10">
+          <div className="flex overflow-x-auto">
+            {["Overview", "Features", "Tech Stack", "Challenges", "Gallery"].map(
+              (tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  aria-pressed={activeTab === tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`relative min-w-[110px] px-4 pb-5 text-sm font-medium transition-colors ${
+                    activeTab === tab
+                      ? "text-primary"
+                      : "text-foreground/40 hover:text-foreground/70"
+                  }`}
                 >
-
-                  <img
-                    src={imagePath(image)}
-                    alt={`${project.name} screenshot ${index + 1}`}
-                    className="h-32 w-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-
-                </div>
-
-              ))}
-
-            </div>
-
+                  {tab}
+                  {activeTab === tab && (
+                    <span className="absolute bottom-0 left-1/2 h-1 w-20 -translate-x-1/2 rounded-full bg-primary" />
+                  )}
+                </button>
+              ),
+            )}
           </div>
+        </div>
+
+{/* ================= OVERVIEW ================= */}
+
+{activeTab === "Overview" && (
+  <section className="mt-8 space-y-10">
+    <div>
+      <h2 className="text-2xl font-bold">The Problem</h2>
+
+      <p className="mt-4 text-sm leading-7 text-foreground/55">
+        {project.problem}
+      </p>
+    </div>
+
+    <div>
+      <h2 className="text-2xl font-bold">The Solution</h2>
+
+      <p className="mt-4 text-sm leading-7 text-foreground/55">
+        {project.solution}
+      </p>
+    </div>
+  </section>
+)}
+
+{/* ================= FEATURES ================= */}
+
+{activeTab === "Features" && (
+  <section className="mt-8">
+
+    <h2 className="text-2xl font-bold">
+      Key Features
+    </h2>
+
+    <div className="mt-8 grid gap-5 sm:grid-cols-2">
+
+      {/* Feature 1 */}
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+        <h3 className="text-lg font-semibold">
+          Brand Management
+        </h3>
+
+        <p className="mt-3 text-sm leading-6 text-foreground/55">
+          Manage brand identity, information, and digital assets
+          from one centralized platform.
+        </p>
+      </div>
+
+      {/* Feature 2 */}
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+        <h3 className="text-lg font-semibold">
+          Team Collaboration
+        </h3>
+
+        <p className="mt-3 text-sm leading-6 text-foreground/55">
+          Manage team members and collaborate efficiently with
+          different users and roles.
+        </p>
+      </div>
+
+      {/* Feature 3 */}
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+        <h3 className="text-lg font-semibold">
+          Asset Management
+        </h3>
+
+        <p className="mt-3 text-sm leading-6 text-foreground/55">
+          Organize, manage, and access important brand assets
+          easily in one place.
+        </p>
+      </div>
+
+      {/* Feature 4 */}
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+        <h3 className="text-lg font-semibold">
+          Digital Presence
+        </h3>
+
+        <p className="mt-3 text-sm leading-6 text-foreground/55">
+          Keep your brand's digital presence organized and
+          consistent across the platform.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+)}
+
+
+{/* ================= TECH STACK ================= */}
+
+{activeTab === "Tech Stack" && (
+  <section className="mt-8">
+
+    <h2 className="text-2xl font-bold">
+      Technologies Used
+    </h2>
+
+    <p className="mt-3 text-sm leading-7 text-foreground/55">
+      Technologies and tools used to build the Bunyan platform.
+    </p>
+
+    <div className="mt-8 flex flex-wrap gap-3">
+
+      {project.technologies.map((technology) => (
+        <span
+          key={technology}
+          className="rounded-full border border-primary/20 bg-primary/10 px-5 py-3 text-sm font-medium text-primary"
+        >
+          {technology}
+        </span>
+      ))}
+
+    </div>
+
+  </section>
+)}
+
+
+{/* ================= CHALLENGES ================= */}
+
+{activeTab === "Challenges" && (
+  <section className="mt-8">
+
+    <h2 className="text-2xl font-bold">
+      Challenges & Solutions
+    </h2>
+
+    <div className="mt-8 space-y-6">
+
+      {/* Challenge 1 */}
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+
+        <h3 className="text-lg font-semibold">
+          Managing Multiple Brand Assets
+        </h3>
+
+        <p className="mt-3 text-sm leading-7 text-foreground/55">
+          Managing different brand assets and keeping them
+          organized can become difficult when everything is
+          distributed across different platforms.
+        </p>
+
+        <div className="mt-5 border-l-2 border-primary pl-4">
+
+          <p className="text-sm leading-7 text-foreground/60">
+            Bunyan provides a centralized platform where brand
+            assets can be organized and accessed more efficiently.
+          </p>
 
         </div>
 
+      </div>
 
 
+      {/* Challenge 2 */}
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+
+        <h3 className="text-lg font-semibold">
+          Team Collaboration
+        </h3>
+
+        <p className="mt-3 text-sm leading-7 text-foreground/55">
+          Teams need an easy way to collaborate while keeping
+          access and responsibilities organized.
+        </p>
+
+        <div className="mt-5 border-l-2 border-primary pl-4">
+
+          <p className="text-sm leading-7 text-foreground/60">
+            The platform brings team collaboration and brand
+            management features together in one interface.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      {/* Challenge 3 */}
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+
+        <h3 className="text-lg font-semibold">
+          Keeping the Interface Simple
+        </h3>
+
+        <p className="mt-3 text-sm leading-7 text-foreground/55">
+          A platform with multiple management features can become
+          complicated for users.
+        </p>
+
+        <div className="mt-5 border-l-2 border-primary pl-4">
+
+          <p className="text-sm leading-7 text-foreground/60">
+            Bunyan focuses on a clean and intuitive interface to
+            make brand management easier for users.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+)}
+
+
+{/* ================= GALLERY ================= */}
+
+{activeTab === "Gallery" && (
+  <section className="mt-10">
+
+    <h2 className="text-2xl font-bold">
+      Project Gallery
+    </h2>
+
+    <p className="mt-3 text-sm leading-7 text-foreground/55">
+      A collection of screens and interfaces from the Bunyan project.
+    </p>
+
+    <div className="mt-8 grid gap-6 sm:grid-cols-2">
+
+      {project.gallery.map((image, index) => (
+        <div
+          key={image}
+          className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]"
+        >
+          <img
+            src={imagePath(image)}
+            alt={`Bunyan project screenshot ${index + 1}`}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      ))}
+
+    </div>
+
+  </section>
+)}
+  </div>
         {/* ================= SIDEBAR ================= */}
 
         <aside className="flex flex-col gap-6">

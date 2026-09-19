@@ -58,7 +58,7 @@ export const projectData = {
     category: ["Web", "Featured"],
     image: `${import.meta.env.BASE_URL}image/portfolio.webp`,
     tags: ["React", "TypeScript", "Tailwind CSS"],
-    link: "#",
+    link: "/projects/portfolio",
     featured: true,
   },
 ],

@@ -116,6 +116,7 @@ export const homeData = {
         image: `${import.meta.env.BASE_URL}image/portfolio.webp`,
         tag: "Featured",
         tags: ["React", "TypeScript", "Tailwind CSS"],
+        link: "/projects/portfolio",
       },
     ],
   },

@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Projects from "./pages/projects";
 import Surrah from "./pages/Surrah";
 import Bunyan from "./pages/Bunyan";
+import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/contact";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,8 @@ const App = () => (
             <Route path="projects/surrah" element={<Surrah />} />
 
             <Route path="projects/bunyan" element={<Bunyan />} />
+
+            <Route path="projects/portfolio" element={<Portfolio />} />
 
             <Route path="contact" element={<Contact />} />
  

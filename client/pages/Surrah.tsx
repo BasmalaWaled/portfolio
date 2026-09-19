@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ArrowLeft,
   ExternalLink,
@@ -19,6 +20,7 @@ const imagePath = (path: string) =>
   `${BASE}${path.replace(/^\/+/, "")}`;
 
 export default function Surrah() {
+  const [activeTab, setActiveTab] = useState("Overview");
   const project = surrahData;
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -174,35 +176,37 @@ export default function Surrah() {
 
               {/* Tabs */}
 
-              <div className="flex gap-7 border-b border-white/10 text-xs">
-
-                <button className="border-b-2 border-primary pb-4 text-primary">
-                  Overview
-                </button>
-
-                <button className="pb-4 text-foreground/40 hover:text-white">
-                  Features
-                </button>
-
-                <button className="pb-4 text-foreground/40 hover:text-white">
-                  Tech Stack
-                </button>
-
-                <button className="pb-4 text-foreground/40 hover:text-white">
-                  Challenges
-                </button>
-
-                <button className="pb-4 text-foreground/40 hover:text-white">
-                  Gallery
-                </button>
+              <div className="border-b border-white/10">
+                <div className="flex overflow-x-auto">
+                  {["Overview", "Features", "Tech Stack", "Challenges", "Gallery"].map(
+                    (tab) => (
+                      <button
+                        key={tab}
+                        type="button"
+                        onClick={() => setActiveTab(tab)}
+                        className={`relative min-w-[110px] px-4 pb-5 text-sm font-medium transition-colors ${
+                          activeTab === tab
+                            ? "text-primary"
+                            : "text-foreground/40 hover:text-foreground/70"
+                        }`}
+                      >
+                        {tab}
+                        {activeTab === tab && (
+                          <span className="absolute bottom-0 left-1/2 h-1 w-20 -translate-x-1/2 rounded-full bg-primary" />
+                        )}
+                      </button>
+                    ),
+                  )}
 
               </div>
+                  </div>
 
 
 
               {/* ================= PROBLEM ================= */}
 
-              <div className="mt-8">
+              {activeTab === "Overview" && (
+                <div className="mt-8">
 
                 <h2 className="flex items-center gap-2 text-sm font-bold">
 
@@ -221,13 +225,15 @@ export default function Surrah() {
 
                 </p>
 
-              </div>
+                </div>
+              )}
 
 
 
               {/* ================= SOLUTION ================= */}
 
-              <div className="mt-8">
+              {activeTab === "Overview" && (
+                <div className="mt-8">
 
                 <h2 className="flex items-center gap-2 text-sm font-bold">
 
@@ -246,13 +252,15 @@ export default function Surrah() {
 
                 </p>
 
-              </div>
+                </div>
+              )}
 
 
 
               {/* ================= GALLERY ================= */}
 
-              <div className="mt-10">
+              {activeTab === "Gallery" && (
+                <div className="mt-10">
 
                 <h2 className="text-sm font-bold">
                   Project Gallery
@@ -280,7 +288,62 @@ export default function Surrah() {
 
                 </div>
 
-              </div>
+                </div>
+              )}
+
+              {activeTab === "Features" && (
+                <section className="mt-8">
+                  <h2 className="text-2xl font-bold">Key Features</h2>
+                  <div className="mt-8 grid gap-5 sm:grid-cols-2">
+                    {[
+                      ["Income and Expense Tracking", "Record income and expenses quickly and keep every transaction organized."],
+                      ["Categories", "Organize spending into clear categories to understand where your money goes."],
+                      ["Financial Reports", "Review daily, weekly, and monthly reports to follow your financial habits."],
+                      ["Offline Access", "Continue managing your finances even when an internet connection is not available."],
+                    ].map(([title, description]) => (
+                      <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                        <h3 className="text-lg font-semibold">{title}</h3>
+                        <p className="mt-3 text-sm leading-6 text-foreground/55">{description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {activeTab === "Tech Stack" && (
+                <section className="mt-8">
+                  <h2 className="text-2xl font-bold">Technologies Used</h2>
+                  <p className="mt-3 text-sm leading-7 text-foreground/55">
+                    Technologies and tools used to build the Surrah platform.
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    {project.technologies.map((technology) => (
+                      <span key={technology} className="rounded-full border border-primary/20 bg-primary/10 px-5 py-3 text-sm font-medium text-primary">
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {activeTab === "Challenges" && (
+                <section className="mt-8">
+                  <h2 className="text-2xl font-bold">Challenges & Solutions</h2>
+                  <div className="mt-8 space-y-6">
+                    {[
+                      ["Making Finance Management Simple", "Personal finance tools can feel complicated when users only need a quick way to record transactions.", "Surrah keeps the main actions clear and easy to access."],
+                      ["Working Without Internet", "Users may need to record expenses while offline.", "The platform is designed to support financial tracking without requiring a constant connection."],
+                      ["Understanding Spending Habits", "Raw transaction lists do not always make financial patterns easy to understand.", "Daily, weekly, and monthly reports help users recognize their spending habits."],
+                    ].map(([title, challenge, solution]) => (
+                      <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                        <h3 className="text-lg font-semibold">{title}</h3>
+                        <p className="mt-3 text-sm leading-7 text-foreground/55">{challenge}</p>
+                        <p className="mt-5 border-l-2 border-primary pl-4 text-sm leading-7 text-foreground/60">{solution}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
 
             </div>
 
