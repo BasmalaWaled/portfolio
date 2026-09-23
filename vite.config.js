@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 export default defineConfig({
-  base: '/portfolio/',
+  base: "/",
 
   plugins: [
     react(),
@@ -18,15 +18,14 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './client')
-    }
+      "@": path.resolve(__dirname, "./client"),
+    },
   },
 
-  root: '.',
-
-  publicDir: 'public',
+  root: ".",
+  publicDir: "public",
 
   server: {
-    port: 3000
-  }
-})
+    port: 3000,
+  },
+});
